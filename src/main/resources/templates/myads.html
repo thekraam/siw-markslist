@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/layout/styles/loginStyle.css" />
+<link rel="stylesheet" href="/layout/styles/indexLayout.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+
+<body style="text-align: center">
+<div class="d-md-flex half">
+	<div class="contents" style="background: #363636e0">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-12">
+					<div class="form-block mx-auto" style="max-width: 1500px; background: #383838">
+						<div class="text-center mb-3">
+						<div style="text-align: left"><a href="/index"><img src="/images/home.png" alt="home" style="width: 20px; height: 20px; text-align: left"></a></div>
+							<h3 style="color: white">GESTISCI INSERZIONI</h3>
+						</div>
+						<hr>
+						<h5 style="color: white">INSERZIONI ATTIVE</h5>
+						<table class="table table-bordered">
+							<thead class="thead">
+							<tr>
+								<th>Immagine</th>
+								<th>Titolo</th>
+								<th>Descrizione</th>
+								<th>Prezzo</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+							<th:block th:each="inserzione : ${inserzioni}">
+								<tr th:if="${inserzione.approved}">
+									<td>[[${inserzione.imagePath}]]</td>
+									<td>[[${inserzione.titolo}]]</td>
+									<td>[[${inserzione.descrizione}]]</td>
+									<td>[[${inserzione.prezzo}]]</td>
+									<td><a th:href="@{'/myads/delete/' + ${inserzione.id}}" class="mr-3">Elimina Inserzione</a></td>
+								</tr>
+						</table>
+						<br>
+						<h5 style="color: white">INSERZIONI IN ATTESA DI APPROVAZIONE</h5>
+						<table class="table table-bordered">
+							<thead class="thead">
+							<tr>
+								<th>Immagine</th>
+								<th>Titolo</th>
+								<th>Descrizione</th>
+								<th>Prezzo</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+							<th:block th:each="inserzione : ${inserzioni}">
+								<tr th:unless="${inserzione.approved}">
+									<td>[[${inserzione.imagePath}]]</td>
+									<td>[[${inserzione.titolo}]]</td>
+									<td>[[${inserzione.descrizione}]]</td>
+									<td>[[${inserzione.prezzo}]]</td>
+									<td><a th:href="@{'/myads/delete/' + ${inserzione.id}}" class="mr-3">Annulla inserzione</a></td>
+								</tr>
+						</table>
+						<span class="text-center my-5 d-block"></span>
+						<a th:href="@{/add}" style="text-decoration:none"><span class="btn btn-block py-2 btn-primary">Aggiungi una inserzione</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

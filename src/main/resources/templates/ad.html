@@ -1,0 +1,81 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/layout/styles/layoutlog.css" />
+<link rel="stylesheet" href="/layout/styles/indexLayout.css" />
+<link rel="stylesheet" href="/layout/styles/griglia.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+<body>
+
+<div>
+    <div>
+          <div class="justify-content-between fixed-top d-flex" style="padding: 10px;background-color: #383838;">
+          		<div><a th:href="@{/index}" style="text-decoration: none; color:white; margin-top: 20px;" ><h5 style="font-family: none; padding: 1px"><b>[markslist]</b></h5></a></div>
+          		<div class="justify-content-between d-flex">
+          		<!-- admin loggato -->
+          		<div th:if="${role!='DEFAULT'} and ${role!='ADMIN'}"><a th:if="${role}=='ADMIN'" th:href="@{/admin/panel}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Pannello di amministrazione</b></span></a></div>
+                <!-- user non loggato -->
+                <div th:if="${role!='DEFAULT'} and ${role!='ADMIN'}" class="justify-content-between d-flex" style="width: 200px">
+                	<a th:href="@{/login}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Login</b></span></a>
+                	<a th:href="@{/register}" ><span class="btn btn-block py-1 btn-primary"  style="padding: 20px"><b>Register</b></span></a>
+                </div>
+                <!-- user loggato -->
+                <div th:if="${role=='DEFAULT'} or ${role=='ADMIN'}" class="justify-content-between d-flex" style="width: 470px">
+                    <a th:href="@{/add}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Inserisci Inserzione</b></span></a>
+          			<a th:href="@{/myads}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Le mie inserzioni</b></span></a>
+                	<a th:href="@{/logout}" ><span class="btn btn-block py-1 btn-primary"  style="padding: 20px"><b>Logout</b></span></a>
+                </div>
+                </div>
+          </div>
+    </div>
+</div>
+<div>
+<div class="d-md-flex half">
+	<div class="contents">
+		<div class="container" style="max-width: 1400px; margin-top: 70px">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-12">
+					<div class="form-block mx-auto" style="max-width: 1700px; max-height: 690px">
+						<div class="text-center mb-3">
+						<br>
+						<div class="row justify-content-center">
+						<form th:action="@{/index/search/result}" method="POST">
+							<div class="form-group first row align-items-center">
+								<input style="height: 34px; width: 700px; text-align:center" name="keyword" type="text" class="form-control" placeholder="trova quello che ti serve" id="keyword">
+								<input type="submit" value="Trovalo!" class="btn btn-block py-1 btn-primary" style="width: 200px; margin-left: 10px">
+							</div>
+						</form>
+						</div>
+						</div>
+						<br>	
+						<div style="color: white; cursor:pointer; width: 1362px; height: 483px; text-align: unset; margin-left: auto; margin-right: auto" onclick="document.location='/ads/${ad.id}'" class="round row">				
+							<span class="imgover"><img th:src="'/immagini-inserzioni/user-' + @{${inserzione.user.id}} + '/inserzione-' + @{${inserzione.id}} + '/' + @{${inserzione.imagePath}}" alt="" style="width: 818px;margin-top: 10px;margin-left: 10px;height: 460px;border: 2px solid transparent;border-radius: 10px;"></span>
+							<div style="font-size: 200%; margin-top: 10px; margin-left: 10px; font-family: 'Roboto', sans-serif; width: 510px">
+							<b>[[${inserzione.titolo}]]</b>
+								<div>
+								<hr>
+								<h6><b>PREZZO</b></h6>
+								<div style="font-size: 50%">[[${inserzione.prezzo}]]</div>
+								<hr>
+								<h6><b>DESCRIZIONE</b></h6>
+								<div style="font-size: 50%">[[${inserzione.descrizione}]]</div>
+								<hr>
+								<h6><b>CONTATTI</b></h6>
+								<div style="font-size: 50%">[[${inserzione.contatto}]]</div>
+								</div>
+							</div>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>

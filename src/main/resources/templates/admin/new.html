@@ -1,0 +1,68 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/layout/styles/loginStyle.css" />
+<link rel="stylesheet" href="/layout/styles/indexLayout.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+
+<body>
+<div class="d-md-flex half">
+	<div class="contents" style="background: #363636e0">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-12">
+					<div class="form-block mx-auto" style="background: #383838">
+						<div class="text-center mb-5">
+							<h3 style="color: white">NUOVO AMMINISTRATORE</h3>
+						</div>
+						<form th:action="@{/admin/new}" method="POST" name="form">
+							<div class="form-group first">
+								<label for="firstname" style="color: white">NOME</label>
+								<input type="text" class="form-control" name="firstname" placeholder="nome" id="firstname" required th:field="${user.nome}">
+								<h6 th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}" th:style="'color:#b90000'"></h6>
+							</div>						
+							<div class="form-group first">
+								<label for="lastname" style="color: white">COGNOME</label>
+								<input type="text" class="form-control" name="lastname" placeholder="cognome" id="lastname" required th:field="${user.cognome}">
+								<h6 th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}" th:style="'color:#b90000'"></h6>
+							</div>						
+							<div class="form-group first">
+								<label for="date" style="color: white">DATA DI NASCITA</label>
+								<input type="date" class="form-control" placeholder="data di nascita" id="birthdate" required th:field="${user.dataDiNascita}">
+								<h6 th:if="${#fields.hasErrors('user.dataDiNascita')}" th:errors="${user.dataDiNascita}" th:style="'color:#b90000'"></h6>
+							</div>
+							<div class="form-group first">
+								<label for="username" style="color: white">USERNAME</label>
+								<input type="text" class="form-control" name="username" placeholder="nome amministratore" id="username" required th:field="${credentials.username}">
+								<h6 th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}" th:style="'color:#b90000'"></h6>
+							</div>
+							<div class="form-group last mb-3">
+								<label for="password" style="color: white">PASSWORD</label>
+								<input type="password" class="form-control" placeholder="crea password" id="password" required th:field="${credentials.password}">
+								<h6 th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}" th:style="'color:#b90000'"></h6>
+							</div>
+							<div class="form-group last mb-3">
+								<label for="password" style="color: white">CONFERMA PASSWORD</label>
+								<input type="password" class="form-control" placeholder="ripeti password" id="passwordConfirm" required th:field="${credentials.passwordConfirm}">
+								<h6 th:if="${#fields.hasErrors('credentials.passwordConfirm')}" th:errors="${credentials.password}" th:style="'color:#b90000'"></h6>
+							</div>
+							<span class="text-center my-5 d-block"></span>
+							<input type="submit" value="Conferma registrazione" class="btn btn-block py-2 btn-primary">
+							<span class="text-center my-1 d-block" style="color: white; font-size: 80%">oppure</span>
+							<span class="text-center my-1 d-block">
+									<a th:href="@{/admin/panel}" style="color: white">Torna al pannello di amministrazione</a>
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

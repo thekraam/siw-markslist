@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/layout/styles/loginStyle.css" />
+<link rel="stylesheet" href="/layout/styles/indexLayout.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+
+<body>
+<div class="d-md-flex half">
+	<div class="contents" style="background: #363636e0">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-12">
+					<div class="form-block mx-auto" style="background: #383838">
+						<div class="text-center mb-5" style="color: white">
+							<h3>PANNELLO DI AMMINISTRAZIONE</h3>
+						<span class="text-center my-5 d-block"></span>
+							<a th:href="@{/admin/manageusers}" style="text-decoration: none"><input type="submit" value="Gestisci Utenti" class="btn btn-block py-2 btn-primary"></a>
+							<br>
+							<a th:href="@{/admin/manageads}" style="text-decoration: none"><input type="submit" value="Visualizza/Approva inserzioni in attesa" class="btn btn-block py-2 btn-primary"></a>
+							<br>
+							<a th:href="@{/admin/new}" style="text-decoration: none"><input type="submit" value="Aggiungi un amministratore" class="btn btn-block py-2 btn-primary"></a>
+							<br>
+						<span class="text-center my-1 d-block" style="color: white">oppure</span>
+						<span class="text-center my-1 d-block">
+								<a th:href="@{/index}" style="color: white">Ritorna alla home</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

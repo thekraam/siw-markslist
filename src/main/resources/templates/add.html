@@ -1,0 +1,77 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/layout/styles/loginStyle.css" />
+<link rel="stylesheet" href="/layout/styles/indexLayout.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+
+<body>
+<div class="d-md-flex half" style="min-height:1328px">
+	<div class="contents" style="background: #363636e0; max-height: 1600px">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-12">
+					<div class="form-block mx-auto"  style="background: #383838">
+						<div class="text-center mb-5" style="color: white">
+						<div style="text-align: left"><a href="/index"><img src="/images/home.png" alt="home" style="width: 20px; height: 20px; text-align: left"></a></div>
+							<h3>CREA L'INSERZIONE</h3>
+						</div>
+						<form th:action="@{/add}" method="POST" name="form" enctype="multipart/form-data">
+						<div style="text-align: center; color: white">&nbsp Anteprima inserzione nella home</div>
+						<div style="color: white; cursor:pointer; margin-left: auto; margin-right: auto" class="round">
+						    <div style="text-align: center">				
+							<span class="imgover"><img id="pic" name="pic" src="/images/yourimagegoeshere.jpg" style="width:298px;height:240px; border: 2px solid transparent; border-radius: 10px;"></span>
+							<div><a class="h6" style="font-size: 120%; text-align: center;"><input readonly value="Titolo Inserzione" id="previewt" style="font-weight: bold; color:white; text-align: center; background-color: #383838; text-decoration: none"></a></div>
+							</div>
+						</div>
+						<br>
+						<br>
+							<div class="form-group first">
+								<label for="immagineanteprima" style="color: white">IMMAGINE INSERZIONE</label>
+								<input type="file" class="form-control" name="image" accept="image/png, image/jpeg" required oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+								<h6 th:if="${#fields.hasErrors('inserzione.titolo')}" th:errors="${inserzione.titolo}" th:style="'color:red'"></h6>
+							</div>						
+							<div class="form-group first">
+								<label for="title" style="color: white">TITOLO INSERZIONE</label>
+								<input type="text" class="form-control" name="title" placeholder="il titolo della tua inserzione" id="title" required th:field="${inserzione.titolo}"  onblur="
+									if(document.form.title.value!='') {
+     									var previewt = document.form.title.value.substr(0,49);
+     									document.form.previewt.value = previewt;
+									}" />
+								<h6 th:if="${#fields.hasErrors('inserzione.titolo')}" th:errors="${inserzione.titolo}" th:style="'color:red'"></h6>
+							</div>	
+							<div class="form-group first">
+								<label for="location" style="color: white">PREZZO</label>
+								<input type="number" class="form-control" placeholder="il prezzo a cui vuoi vendere il tuo oggetto" id="date" required th:field="${inserzione.prezzo}">
+								<h6 th:if="${#fields.hasErrors('inserzione.prezzo')}" th:errors="${inserzione.prezzo}" th:style="'color:red'"></h6>
+							</div>					
+							<div class="form-group first">
+								<label for="location" style="color: white">DESCRIZIONE</label>
+								<input type="text" class="form-control" placeholder="la descrizione del tuo oggetto" id="location" required th:field="${inserzione.descrizione}">
+								<h6 th:if="${#fields.hasErrors('inserzione.descrizione')}" th:errors="${inserzione.descrizione}" th:style="'color:red'"></h6>
+							</div>
+							<div class="form-group first">
+								<label for="location" style="color: white">CONTATTO</label>
+								<input type="text" class="form-control" placeholder="il tuo numero di telefono, la tua mail o altro" id="location" required th:field="${inserzione.contatto}">
+								<h6 th:if="${#fields.hasErrors('inserzione.contatto')}" th:errors="${inserzione.contatto}" th:style="'color:red'"></h6>
+							</div>
+							<span class="text-center my-5 d-block"></span>
+							<input type="submit" value="Aggiungi questa inserzione" class="btn btn-block py-2 btn-primary">
+							<span class="text-center my-1 d-block" style="font-size: 80%; color: white">oppure</span>
+							<span class="text-center my-1 d-block">
+									<a th:href="@{/index}" style="color: white">Torna alla home</a>
+							</span>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
