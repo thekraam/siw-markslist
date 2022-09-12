@@ -83,7 +83,7 @@ public class AuthenticationController {
             
             credentialsService.saveCredentials(credentials);
             
-            return "login";
+            return "registered";
         }
         // altrimenti stampa gli errori in console...
         //if(userBindingResult.hasErrors()) {
