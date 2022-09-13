@@ -50,6 +50,20 @@ Il sistema prevede i seguenti casi d'uso:
 3. L'utente iscritto seleziona l'attività 'Mie Inserzioni'. Il sistema mostra l'elenco delle inserzioni dell'utente con i relativi dettagli.
 4. L'utente iscritto seleziona l'attività 'Elimina Inserzione' in riferimento all'inserzione di interesse. Il sistema cancella l'inserzione e mostra la pagina di operazione effettuata.
 
+#### UC8
+##### Ricerca tramite parola chiave - Attore primario: Chiunque
+1. L'utente ha intenzione di effettuare una ricerca di inserzione tramite parola chiave.
+2. L'utente compila il campo 'trova quello che ti serve' nella pagina principale con una parola chiave.
+3. L'utente seleziona l'attività 'Trovalo'. Il sistema mostra l'elenco delle inserzioni che contengono la parola chiave inserita.
+
+#### UC9
+##### Visualizzazione inserzioni utente - Attore primario: Amministratore
+1. L'amministratore ha intenzione di visualizzare i dettagli delle inserzioni di uno specifico utente.
+2. L'amministratore si autentica mediante username e password. Il sistema mostra la pagina principale.
+3. L'amministratore sceglie l'attività 'Pannello di Amministrazione'. Il sistema mostra l'elenco delle attività di amministrazione disponibili.
+4. L'amministratore sceglie l'attività 'Gestisci Utenti'. Il sistema mostra l'elenco degli utenti registrati.
+5. L'amministratore sceglie l'attività 'Visualizza Inserzioni' dell'utente di riferimento. Il sistema mostra l'elenco delle inserzioni create da quell'utente.
+
 #### UCX
 ##### Visualizzazione di contenuti multimediali, fase di 'Login' e 'Registrazione' sono casi d'uso immediati.
 
