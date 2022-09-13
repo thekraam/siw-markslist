@@ -49,6 +49,6 @@ public @Data class Inserzione {
 	@Column(nullable = false, length = 64)
     private String imagePath;
 	
-	@ManyToOne(cascade= {CascadeType.ALL})
+	@ManyToOne
 	private User user;
 }

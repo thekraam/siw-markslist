@@ -19,7 +19,7 @@
 					<div class="form-block mx-auto" style="max-width: 1500px; background: #383838">
 						<div class="text-center mb-3">
 						<div style="text-align: left"><a href="/index"><img src="/images/home.png" alt="home" style="width: 20px; height: 20px; text-align: left"></a></div>
-							<h3 style="color: white">INSERZIONI DI [[${user.username}]]</h3>
+							<h3 style="color: white">INSERZIONI DI "[[${user.username}]]"</h3>
 						</div>
 						<table class="table table-bordered">
 							<thead class="thead">
@@ -40,6 +40,10 @@
 									<td th:if="@{!${inserzione.approved}}">non approvata</td>
 								</tr>
 						</table>
+						<span class="text-center my-5 d-block"></span>
+						<span class="text-center my-1 d-block" style="font-size: 120%;">
+								<a th:href="@{/admin/manageusers}">Ritorna alla gestione utenti</a>
+						</span>
 					</div>
 				</div>
 			</div>

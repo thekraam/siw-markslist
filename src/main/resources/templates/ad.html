@@ -18,14 +18,17 @@
           		<div><a th:href="@{/index}" style="text-decoration: none; color:white; margin-top: 20px;" ><h5 style="font-family: none; padding: 1px"><b>[markslist]</b></h5></a></div>
           		<div class="justify-content-between d-flex">
           		<!-- admin loggato -->
-          		<div th:if="${role!='DEFAULT'} and ${role!='ADMIN'}"><a th:if="${role}=='ADMIN'" th:href="@{/admin/panel}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Pannello di amministrazione</b></span></a></div>
+          		<div th:if="${role}=='ADMIN'" class="justify-content-between d-flex" style="width: 370px">
+          			<a th:href="@{/admin/panel}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Pannello di amministrazione</b></span></a>
+          			<a th:href="@{/logout}" ><span class="btn btn-block py-1 btn-primary"  style="padding: 20px"><b>Logout</b></span></a>
+          		</div>
                 <!-- user non loggato -->
                 <div th:if="${role!='DEFAULT'} and ${role!='ADMIN'}" class="justify-content-between d-flex" style="width: 200px">
                 	<a th:href="@{/login}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Login</b></span></a>
                 	<a th:href="@{/register}" ><span class="btn btn-block py-1 btn-primary"  style="padding: 20px"><b>Register</b></span></a>
                 </div>
                 <!-- user loggato -->
-                <div th:if="${role=='DEFAULT'} or ${role=='ADMIN'}" class="justify-content-between d-flex" style="width: 470px">
+                <div th:if="${role=='DEFAULT'}" class="justify-content-between d-flex" style="width: 470px">
                     <a th:href="@{/add}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Inserisci Inserzione</b></span></a>
           			<a th:href="@{/myads}" ><span class="btn btn-block py-1 btn-primary" style="padding: 20px"><b>Le mie inserzioni</b></span></a>
                 	<a th:href="@{/logout}" ><span class="btn btn-block py-1 btn-primary"  style="padding: 20px"><b>Logout</b></span></a>
