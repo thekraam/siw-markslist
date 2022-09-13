@@ -37,6 +37,19 @@ Il sistema prevede i seguenti casi d'uso:
 4. L'amministratore sceglie l'attività 'Crea nuovo amministratore' . Il sistema mostra un form da compilare.
 5. L'amministratore compila il form, compresa la password. Il sistema registra le informazioni e crea un nuovo amministratore. Il sistema mostra i dati appena registrati all'amministratore che ha effettuato l'operazione.
 
+#### UC6
+##### Visualizzazione dettagli inserzioni personali - Attore primario: Utente Iscritto
+1. L'utente iscritto ha intenzione di visualizzare i dettagli di tutte le proprie inserzioni, attive e non.
+2. L'utente iscritto si autentica mediante username e password. Il sistema mostra la pagina principale.
+3. L'utente iscritto seleziona l'attività 'Mie Inserzioni'. Il sistema mostra l'elenco delle inserzioni dell'utente con i relativi dettagli.
+
+#### UC7
+##### Eliminazione Inserzione - Attore primario: Utente Iscritto
+1. L'utente iscritto ha intenzione di eliminare una propria inserzione.
+2. L'utente iscritto si autentica mediante username e password. Il sistema mostra la pagina principale.
+3. L'utente iscritto seleziona l'attività 'Mie Inserzioni'. Il sistema mostra l'elenco delle inserzioni dell'utente con i relativi dettagli.
+4. L'utente iscritto seleziona l'attività 'Elimina Inserzione' in riferimento all'inserzione di interesse. Il sistema cancella l'inserzione e mostra la pagina di operazione effettuata.
+
 #### UCX
-##### Visualizzazione contenuti digitali, 'Login' e 'Registrazione' sono casi d'uso immediati.
+##### Visualizzazione di contenuti multimediali, fase di 'Login' e 'Registrazione' sono casi d'uso immediati.
 
