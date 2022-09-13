@@ -58,6 +58,7 @@ public class InserzioneController {
 		List<Inserzione> inserzioniUtente = inserzioneService.getInserzioniUtente(utenteCorrente);
 		
 		model.addAttribute("inserzioni", inserzioniUtente);
+		model.addAttribute("user", utenteCorrente);
 		
 		return "myads";
 	}

@@ -36,7 +36,7 @@
 							<tbody>
 							<th:block th:each="inserzione : ${inserzioni}">
 								<tr th:if="${inserzione.approved}">
-									<td>[[${inserzione.imagePath}]]</td>
+									<td><a th:href="@{'/immagini-inserzioni/user-' + ${user.id} + '/inserzione-' + ${inserzione.id} + '/' + ${inserzione.imagePath} }">[[${inserzione.imagePath}]]</a></td>
 									<td>[[${inserzione.titolo}]]</td>
 									<td>[[${inserzione.descrizione}]]</td>
 									<td>[[${inserzione.prezzo}]]</td>
@@ -58,7 +58,7 @@
 							<tbody>
 							<th:block th:each="inserzione : ${inserzioni}">
 								<tr th:unless="${inserzione.approved}">
-									<td>[[${inserzione.imagePath}]]</td>
+									<td><a th:href="@{'/immagini-inserzioni/user-' + ${user.id} + '/inserzione-' + ${inserzione.id} + '/' + ${inserzione.imagePath} }">[[${inserzione.imagePath}]]</a></td>
 									<td>[[${inserzione.titolo}]]</td>
 									<td>[[${inserzione.descrizione}]]</td>
 									<td>[[${inserzione.prezzo}]]</td>
