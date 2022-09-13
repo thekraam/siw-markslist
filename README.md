@@ -65,5 +65,5 @@ Il sistema prevede i seguenti casi d'uso:
 5. L'amministratore sceglie l'attività 'Visualizza Inserzioni' dell'utente di riferimento. Il sistema mostra l'elenco delle inserzioni create da quell'utente.
 
 #### UCX
-##### Visualizzazione di contenuti multimediali, fase di 'Login' e 'Registrazione' sono casi d'uso immediati.
+##### Visualizzazione di contenuti multimediali, fase di 'Login' e 'Registrazione'  e simili sono casi d'uso immediati.
 
