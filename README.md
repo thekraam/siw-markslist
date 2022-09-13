@@ -18,8 +18,8 @@ Il sistema prevede i seguenti casi d'uso:
 ##### Inserimento di una nuova inserzione - Attore primario: Utente Iscritto
 1. L'utente iscritto ha intenzione di pubblicare una nuova inserzione.
 2. L'utente iscritto si autentica mediante username e password. Il sistema mostra la pagina principale.
-3. L'utente sceglie l'attività 'Crea Inserzione'. Il sistema mostra un form da compilare.
-4. L'utente compila i campi e aggiunge una immagine. Il sistema registra i dati e mette l'inserzione in attesa di approvazione.
+3. L'utente iscritto sceglie l'attività 'Crea Inserzione'. Il sistema mostra un form da compilare.
+4. L'utente iscritto compila i campi e aggiunge una immagine. Il sistema registra i dati e mette l'inserzione in attesa di approvazione.
 
 #### UC4
 ##### Approvazione di una inserzione in attesa - Attore primario: Amministratore
